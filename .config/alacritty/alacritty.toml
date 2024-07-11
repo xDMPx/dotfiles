@@ -1,1 +1,33 @@
 import = ["/home/dmp/.config/alacritty/dracula.toml"]
+
+[colors.normal]
+red = "#ed254e"
+
+[colors.primary]
+background = "#141b2e"
+foreground = "#eec49a"
+
+[cursor.style]
+blinking = "On"
+shape = "Underline"
+
+[font]
+size = 10.5
+
+[font.bold]
+family = "CaskaydiaCove Nerd Font"
+
+[font.bold_italic]
+family = "CaskaydiaCove Nerd Font"
+
+[font.italic]
+family = "CaskaydiaCove Nerd Font"
+
+[font.normal]
+family = "CaskaydiaCove Nerd Font"
+
+[shell]
+program = "fish"
+
+[window]
+opacity = 0.75
