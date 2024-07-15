@@ -24,6 +24,7 @@ truncation_symbol = "repo: "
 # Fourth param
 [sudo]
 disabled = false
+symbol = " "
 
 # Before all the version info (python, nodejs, php, etc.)
 [git_status]
