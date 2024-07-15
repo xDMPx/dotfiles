@@ -14,3 +14,8 @@ if test -d ~/.local/bin
         set -p PATH ~/.local/bin
     end
 end
+
+## Starship prompt
+if status --is-interactive
+   source ("/usr/bin/starship" init fish --print-full-init | psub)
+end
