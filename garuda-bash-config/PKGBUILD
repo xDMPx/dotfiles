@@ -1,0 +1,24 @@
+# Maintainer: dr460nf1r3 <dr460nf1r3 at garudalinux dot org>
+# Contributor: Librewish <librewish@gmail.com>
+
+pkgname=garuda-bash-config
+pkgver=1.0.6
+pkgrel=1
+pkgdesc="Bash configuration for Garuda Linux"
+arch=(any)
+url="https://gitlab.com/garuda-linux/themes-and-settings/settings/$pkgname"
+license=('GPL')
+depends=('bash'
+	'bash-completion'
+	'find-the-command-git'
+	'garuda-starship-prompt'
+	'ugrep')
+makedepends=('git')
+source=('bashrc' 'bashrc-setup.desktop')
+sha256sums=('8ef4770ea10f22755fb288edeea06f311596517ed8178c185ed332f0e46144a5'
+            '8eed6302b7a8674b3a1784c599a7d7ae73e76ea8992ec324f62ec6b45f469cd5')
+
+package() {
+	install -D -m644 bashrc "$pkgdir/etc/skel/.bashrc_garuda"
+	install -D -m644 bashrc-setup.desktop "$pkgdir/etc/skel/.config/autostart/bashrc-setup.desktop"
+}

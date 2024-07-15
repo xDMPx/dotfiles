@@ -1,0 +1,34 @@
+# Maintainer: dr460nf1r3 <dr460nf1r3 at garudalinux dot org>
+# Contributor: Librewish <librewish@gmail.com>
+
+pkgname=garuda-sway-settings
+pkgdesc='Garuda Linux Sway settings'
+pkgver="1.1.45"
+_commit='9518a0c21a2481bc7d098e79a4cd081e867c7380'
+pkgrel=1
+arch=('any')
+url="https://gitlab.com/garuda-linux/themes-and-settings/settings/$pkgname"
+license=('GPL')
+makedepends=('coreutils')
+source=("https://gitlab.com/garuda-linux/themes-and-settings/settings/garuda-sway-settings/-/archive/${_commit}/garuda-sway-settings-${_commit}.tar.gz")
+sha256sums=('SKIP')
+depends=('sway')
+optdepends=('kvantum: for theming Qt apps'
+  'kvantum-qt5: Qt5 integration for Kvantum'
+  'kvantum-theme-nordic-git: default Kvantum theme'
+  'nordic-darker-theme: default GTK theme'
+  'swaybg: for setting desktop background'
+  'swayidle: default idle management daemon'
+  'swaylock: default screen locker'
+  'tela-circle-icon-theme-nord: default icon theme')
+
+install="$pkgname".install
+provides=('garuda-desktop-settings')
+conflicts=('garuda-desktop-settings')
+
+package() {
+  install -d "$pkgdir/etc"
+  cp -rf "$srcdir/$pkgname-$_commit/etc" "$pkgdir"
+  install -d "$pkgdir/usr"
+  cp -rf "$srcdir/$pkgname-$_commit/usr" "$pkgdir"
+}

@@ -1,0 +1,14 @@
+# Maintainer: dr460nf1r3 <dr460nf1r3 at garudalinux dot org>
+# Contributor: Librewish <librewish@gmail.com>
+
+pkgname='grub-garuda'
+pkgdesc='Meta-package for using GRUB on Garuda Linux'
+pkgver=2.06
+pkgrel=2
+url='https://www.gnu.org/software/grub/'
+arch=('any')
+license=('GPL3')
+conflicts=('grub-garuda' 'grub-customizer')
+provides=('grub-garuda')
+makedepends=('git')
+depends=('grub' 'update-grub' 'os-prober-btrfs' 'efibootmgr' 'memtest86+')

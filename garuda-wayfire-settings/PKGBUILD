@@ -1,0 +1,31 @@
+# Maintainer: dr460nf1r3 <dr460nf1r3 at garudalinux dot org>
+# Contributor: Librewish <librewish@gmail.com>
+
+pkgname=garuda-wayfire-settings
+pkgdesc='Garuda Linux Wayfire settings'
+pkgver="1.0.32"
+_commit='1efb4d7507fd9c48870b098361ad1ba7f3d23d13'
+pkgrel=2
+arch=('any')
+url="https://gitlab.com/garuda-linux/themes-and-settings/settings/$pkgname"
+license=('GPL')
+makedepends=('coreutils')
+source=("https://gitlab.com/garuda-linux/themes-and-settings/settings/garuda-wayfire-settings/-/archive/${_commit}/garuda-wayfire-settings-${_commit}.tar.gz")
+sha256sums=('SKIP')
+depends=('beautyline'
+	'garuda-fish-config'
+	'ttf-fantasque-nerd'
+	'plasma5-themes-sweet-full-git'
+	'ttf-fira-sans'
+	'garuda-common-settings')
+provides=('garuda-desktop-settings')
+conflicts=('garuda-desktop-settings')
+replaces=('wayfire-default-settings')
+install="$pkgname".install
+
+package() {
+	install -d "$pkgdir/etc"
+	cp -rf "$srcdir/$pkgname-$_commit/etc" "$pkgdir"
+	install -d "$pkgdir/usr"
+	cp -rf "$srcdir/$pkgname-$_commit/usr" "$pkgdir"
+}

@@ -1,0 +1,32 @@
+# Maintainer: dr460nf1r3 <dr460nf1r3 at garudalinux dot org>
+# Maintainer: TNE <tne at garudalinux dot org>
+
+pkgname=garuda-setup-assistant
+pkgver="3.1.12"
+_commit='77c4b425d8b6ac60454b351272a57308cfd091c2'
+pkgrel=1
+pkgdesc="A setup utility for Garuda Linux which helps setting up & installing applications"
+arch=('any')
+url="https://gitlab.com/garuda-linux/applications/garuda-setup-assistant"
+license=('GPL3')
+depends=('yad' 'wget' 'garuda-libs' 'qt5-base')
+optdepends=('pamac')
+makedepends=('git' 'cmake')
+groups=('garuda')
+source=("https://gitlab.com/garuda-linux/applications/garuda-setup-assistant/-/archive/${_commit}/garuda-setup-assistant-${_commit}.tar.gz")
+sha256sums=('SKIP')
+
+build() {
+    cmake -B build -S "$pkgname-$_commit" \
+        -DCMAKE_BUILD_TYPE='Release' \
+        -DCMAKE_INSTALL_PREFIX='/usr' \
+        -Wno-dev
+    make -C build
+}
+
+package() {
+    make -C build DESTDIR="$pkgdir" install
+
+    install -d "$pkgdir"/usr
+    cp -rf "$srcdir"/$pkgname-$_commit/usr "$pkgdir"
+}
