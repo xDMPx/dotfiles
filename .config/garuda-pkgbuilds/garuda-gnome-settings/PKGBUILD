@@ -1,0 +1,29 @@
+# Maintainer: dr460nf1r3 <dr460nf1r3 at garudalinux dot org>
+
+pkgname=garuda-gnome-settings
+pkgver="1.5.6"
+_commit='5a93a443f377859331aa9c3a74d4366f11d608f0'
+pkgrel=2
+arch=('any')
+url="https://gitlab.com/garuda-linux/themes-and-settings/settings/$pkgname"
+license=('GPL')
+makedepends=('coreutils')
+source=("https://gitlab.com/garuda-linux/themes-and-settings/settings/garuda-gnome-settings/-/archive/${_commit}/garuda-gnome-settings-${_commit}.tar.gz")
+sha256sums=('SKIP')
+pkgdesc='Garuda Linux GNOME settings'
+install=$pkgname.install
+provides=('garuda-desktop-settings')
+conflicts=('garuda-desktop-settings')
+
+package() {
+	install -d "$pkgdir"/etc
+	cp -rf "$srcdir"/$pkgname-$_commit/etc "$pkgdir"
+	depends=('garuda-backgrounds'
+		'garuda-common-settings'
+		'gnome-themes-extra'
+		'kvantum'
+		'kvantum-qt5'
+		'volantes-cursors'
+		'ttf-fira-sans'
+		'ttf-firacode-nerd')
+}

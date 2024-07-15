@@ -1,0 +1,26 @@
+# Maintainer: dr460nf1r3 <dr460nf1r3 at garudalinux dot org>
+# Contributor: Librewish <librewish@gmail.com>
+
+pkgname=garuda-xfce-settings
+pkgdesc='Garuda Linux XFCE settings'
+pkgver="1.0.4"
+_commit='bc3719832e1b01a1c798913ae9332cb8fe9469c1'
+pkgrel=1
+arch=('any')
+url="https://gitlab.com/garuda-linux/themes-and-settings/settings/$pkgname"
+license=('GPL')
+makedepends=('coreutils')
+source=("https://gitlab.com/garuda-linux/themes-and-settings/settings/garuda-xfce-settings/-/archive/${_commit}/garuda-xfce-settings-${_commit}.tar.gz")
+sha256sums=('SKIP')
+depends=('noto-fonts'
+	'garuda-common-settings')
+provides=('garuda-desktop-settings')
+conflicts=('garuda-desktop-settings')
+install="$pkgname".install
+
+package() {
+	install -d "$pkgdir/etc"
+	cp -rf "$srcdir/$pkgname-$_commit/etc" "$pkgdir"
+	install -d "$pkgdir/usr"
+	cp -rf "$srcdir/$pkgname-$_commit/usr" "$pkgdir"
+}

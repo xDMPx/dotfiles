@@ -1,0 +1,37 @@
+# Maintainer: dr460nf1r3 <dr460nf1r3 at garudalinux dot org
+# Contributor: zoeruda <forum.garudalinux.org/u/zoeruda>
+# Contributor: Librewish <librewish@gmail.com>
+
+pkgname=garuda-mate-settings
+pkgdesc='Garuda Linux Mate settings'
+pkgver="1.5.3"
+_commit='559dffa41962f58e6ad13e431eb4817df71d3476'
+pkgrel=3
+arch=('any')
+url="https://gitlab.com/garuda-linux/themes-and-settings/settings/$pkgname"
+license=('GPL')
+makedepends=('coreutils')
+source=("https://gitlab.com/garuda-linux/themes-and-settings/settings/garuda-mate-settings/-/archive/${_commit}/garuda-mate-settings-${_commit}.tar.gz")
+sha256sums=('SKIP')
+depends=(
+	'adapta-gtk-theme'
+	'beautyline'
+	'boston-icon-theme'
+	'garuda-backgrounds'
+	'garuda-common-settings'
+	'garuda-fish-config'
+	'kvantum'
+	'plasma5-themes-sweet-full-git'
+	'ttf-firacode-nerd'
+	'yaru-icon-theme'
+)
+provides=('garuda-desktop-settings')
+conflicts=('garuda-desktop-settings')
+install=$pkgname.install
+
+package() {
+	install -d "$pkgdir"/etc
+	cp -rf "$srcdir"/$pkgname-$_commit/etc "$pkgdir"
+	install -d "$pkgdir"/usr
+	cp -rf "$srcdir"/$pkgname-$_commit/usr "$pkgdir"
+}

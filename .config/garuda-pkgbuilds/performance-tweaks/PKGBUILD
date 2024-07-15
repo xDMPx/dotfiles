@@ -1,0 +1,26 @@
+# Maintainer: dr460nf1r3 <dr460nf1r3@garudalinux.org>
+# Contributor: Librewish <librewish@gmail.com>
+
+pkgname=performance-tweaks
+pkgdesc='Tweaks to improve performance'
+pkgver="2.2.0"
+_commit='ea00da107c497bd5b87f66422c86e2386f0bbccf'
+pkgrel=1
+arch=('any')
+url="https://gitlab.com/garuda-linux/themes-and-settings/settings/$pkgname"
+license=('GPL')
+depends=('ananicy-cpp'
+	'cachyos-ananicy-rules-git'
+	'hdparm'
+	'irqbalance'
+	'preload')
+makedepends=('coreutils')
+source=("https://gitlab.com/garuda-linux/themes-and-settings/settings/performance-tweaks/-/archive/${_commit}/performance-tweaks-${_commit}.tar.gz")
+sha256sums=('SKIP')
+conflicts=('powersave-tweaks' 'tlp' 'auto-cpufreq' 'thermald')
+install=$pkgname.install
+
+package() {
+	install -d "$pkgdir"/usr/lib
+	cp -rf "$srcdir"/$pkgname-$_commit/usr "$pkgdir"
+}

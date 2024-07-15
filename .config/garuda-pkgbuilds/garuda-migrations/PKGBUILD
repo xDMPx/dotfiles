@@ -1,0 +1,28 @@
+# Maintainer: TNE <tne@garudalinux.org>
+
+pkgname=garuda-migrations
+pkgdesc="Automatically applies system configuration changes"
+pkgver=2.5.2
+pkgrel=1
+arch=('any')
+license=('GPL')
+depends=('coreutils' 'sed' 'awk' 'garuda-libs>=1.1.0')
+source=(garuda-migrations-runner
+	garuda-migrations-firedragon
+	garuda-migrations.hook)
+sha256sums=('1a8a709c88b15b4e6a303b85fa2dc367026933fc1d7aea614ffa451546835653'
+            '17c4e9014ba6f6368eaa6f1531f328753f685abedfe27575f4b0dd9ad71122c3'
+            '6eef7ff66e8decdc668e6e49aa9bc41523d4aa9a2f722bc654d03c5d7bd83f65')
+
+package() {
+	install -d "$pkgdir"/usr/share/garuda/migrations
+	install -d "$pkgdir"/etc/garuda/migrations
+	echo "$pkgver-$pkgrel" >"$pkgdir"/usr/share/garuda/migrations/current_version
+
+	cd "$srcdir" || exit
+	install -d "$pkgdir"/usr/share/libalpm/hooks
+	install -Dm644 garuda-migrations.hook "$pkgdir"/usr/share/libalpm/hooks/00-garuda-migrations.hook
+	install -d "$pkgdir"/usr/share/libalpm/scripts
+	install -Dm755 garuda-migrations-runner "$pkgdir"/usr/share/libalpm/scripts/garuda-migrations-runner
+	install -Dm755 garuda-migrations-firedragon "$pkgdir"/usr/share/libalpm/scripts/garuda-migrations-firedragon
+}
