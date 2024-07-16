@@ -29,3 +29,5 @@ alias lt='exa -aT --color=always --group-directories-first --icons' # tree listi
 alias l.="exa -a | egrep '^\.'"                                     # show only dotfiles
 alias ip="ip -color"
 
+# Replace cat with bat
+alias cat='bat --style header --style snip --style changes --style header'
