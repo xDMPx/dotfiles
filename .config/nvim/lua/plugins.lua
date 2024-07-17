@@ -25,5 +25,9 @@ bootstrap_pckr()
 
 require('pckr').add{
     -- colorscheme
-    'Mofiqul/dracula.nvim'
+    'Mofiqul/dracula.nvim',
+
+    -- fuzzy finder
+    {'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim'}}
+
 }
