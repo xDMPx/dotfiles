@@ -16,3 +16,7 @@ vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
 -- yank to system clipboard
 vim.cmd [[set clipboard+=unnamedplus]]
+
+-- plugin manager pckr
+require('plugins')
+
