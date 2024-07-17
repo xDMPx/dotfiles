@@ -20,3 +20,10 @@ vim.cmd [[set clipboard+=unnamedplus]]
 -- plugin manager pckr
 require('plugins')
 
+-- colorscheme
+require('dracula').setup {
+    -- use transparent background
+    transparent_bg = true, -- default false
+}
+
+vim.cmd [[colorscheme dracula]]

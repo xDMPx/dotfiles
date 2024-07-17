@@ -24,4 +24,6 @@ bootstrap_pckr()
 -- local keys = require('pckr.loader.keys')
 
 require('pckr').add{
+    -- colorscheme
+    'Mofiqul/dracula.nvim'
 }
