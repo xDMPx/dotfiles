@@ -31,5 +31,8 @@ require('pckr').add{
     {'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim'}},
 
     --  indentation guides
-    "lukas-reineke/indent-blankline.nvim"
+    "lukas-reineke/indent-blankline.nvim",
+
+    -- Treesitter - highlighting
+    { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
 }
