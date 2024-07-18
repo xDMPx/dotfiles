@@ -28,6 +28,8 @@ require('pckr').add{
     'Mofiqul/dracula.nvim',
 
     -- fuzzy finder
-    {'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim'}}
+    {'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim'}},
 
+    --  indentation guides
+    "lukas-reineke/indent-blankline.nvim"
 }
