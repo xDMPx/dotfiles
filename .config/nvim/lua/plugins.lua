@@ -35,4 +35,13 @@ require('pckr').add{
 
     -- Treesitter - highlighting
     { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
+
+    { -- git interface 
+    "NeogitOrg/neogit",
+        dependencies = {
+            "nvim-lua/plenary.nvim",         -- required
+            "nvim-telescope/telescope.nvim", -- optional
+            "sindrets/diffview.nvim",        -- optional
+        }
+    },
 }
