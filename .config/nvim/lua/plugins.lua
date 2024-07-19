@@ -36,6 +36,11 @@ require('pckr').add{
     -- Treesitter - highlighting
     { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
 
+    -- package manager for LSP servers, DAP servers, linters, and formatters 
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+    'neovim/nvim-lspconfig',
+
     { -- git interface 
     "NeogitOrg/neogit",
         dependencies = {

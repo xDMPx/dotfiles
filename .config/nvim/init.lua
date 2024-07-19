@@ -69,6 +69,13 @@ require('nvim-treesitter.configs').setup {
     },
 }
 
+
+-- package manager for LSP servers, DAP servers, linters, and formatters 
+require("mason").setup {}
+require("mason-lspconfig").setup {
+  ensure_installed = { "rust_analyzer", "pyright", "lua_ls" }
+}
+
 -- git decorations, integration for buffers
 require('gitsigns').setup {}
 
