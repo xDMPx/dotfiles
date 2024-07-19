@@ -69,6 +69,9 @@ require('nvim-treesitter.configs').setup {
     },
 }
 
+-- git decorations, integration for buffers
+require('gitsigns').setup {}
+
 -- git interface 
 require('neogit').setup{
     -- Hides the hints at the top of the status buffer
