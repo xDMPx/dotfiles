@@ -48,6 +48,14 @@ require('pckr').add{
     'hrsh7th/cmp-cmdline',
     'hrsh7th/nvim-cmp',
 
+    { -- powerful autopair plugin  that supports multiple characters
+    "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = function()
+            require("nvim-autopairs").setup {}
+        end
+    },
+
     { -- git interface 
     "NeogitOrg/neogit",
         dependencies = {
