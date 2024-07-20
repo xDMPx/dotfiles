@@ -85,9 +85,9 @@ snippet = {
         vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
       end,
     },
-    window = {
-        -- completion = cmp.config.window.bordered(),
-        -- documentation = cmp.config.window.bordered(),
+    window = { -- https://github.com/hrsh7th/nvim-cmp/blob/main/lua/cmp/config/window.lua
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
