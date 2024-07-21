@@ -36,14 +36,14 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 -- indentation guides
-require("ibl").setup {}
+require('ibl').setup {}
 
 -- TreeSitter - highlighting
 require('nvim-treesitter.configs').setup {
-    -- A list of parser names, or "all"
-    ensure_installed = { "rust", "python", "cpp", "lua", "vim", "vimdoc" },
-    -- List of parsers to ignore installing (or "all")
-    -- ignore_install = { "javascript" },
+    -- A list of parser names, or 'all'
+    ensure_installed = { 'rust', 'python', 'cpp', 'lua', 'vim', 'vimdoc' },
+    -- List of parsers to ignore installing (or 'all')
+    -- ignore_install = { 'javascript' },
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
     -- Automatically install missing parsers when entering buffer
@@ -59,7 +59,7 @@ require('nvim-treesitter.configs').setup {
         -- disable highlighting for the `tex` filetype, you need to include `latex` in this list as this is
         -- the name of the parser)
         -- list of language that will be disabled
-        -- disable = { "c", "rust" },
+        -- disable = { 'c', 'rust' },
 
         -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
         -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
@@ -73,7 +73,7 @@ require('nvim-treesitter.configs').setup {
 -- package manager for LSP servers, DAP servers, linters, and formatters 
 require('mason').setup {}
 require('mason-lspconfig').setup {
-  ensure_installed = { "rust_analyzer", "pyright", "lua_ls" }
+  ensure_installed = { 'rust_analyzer', 'pyright', 'lua_ls' }
 }
 
 -- CMP(completion engine) configuration 
@@ -122,7 +122,7 @@ cmp.setup.cmdline(':', {
 })
 
 -- autoparis for cmp 
-require("nvim-autopairs").setup {} 
+require('nvim-autopairs').setup {} 
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 cmp.event:on(
     'confirm_done',
@@ -184,15 +184,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- LSP floating windows round borders
 -- https://vi.stackexchange.com/questions/39074/user-borders-around-lsp-floating-windows
-local _border = "rounded"
+local _border = 'rounded'
 
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
     vim.lsp.handlers.hover, {
         border = _border
     }
 )
 
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
     vim.lsp.handlers.signature_help, {
         border = _border
     }
@@ -208,7 +208,7 @@ require('lspconfig.ui.windows').default_options = {
   border = _border
 }
 
--- Transparent windows LSP, etc.
+-- Transparent LSP, etc. windows
 -- https://vi.stackexchange.com/questions/38038/how-to-change-background-color-of-the-text-of-hover-window
 local set_hl_for_floating_window = function()
     vim.api.nvim_set_hl(0, 'NormalFloat', {
