@@ -101,7 +101,7 @@ require('mason-lspconfig').setup {
 -- Mappings https://vonheikemen.github.io/devlog/tools/setup-nvim-lspconfig-plus-nvim-cmp/ 
 local cmp = require('cmp')
 cmp.setup{
-snippet = {
+    snippet = {
       -- REQUIRED - you must specify a snippet engine
       expand = function(args)
         vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
@@ -140,9 +140,9 @@ snippet = {
         end, {'i', 's'}),
     }),
     sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-    }, {
+        { name = 'path' },
         { name = 'buffer' },
+        { name = 'nvim_lsp' },
     })
 }
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
