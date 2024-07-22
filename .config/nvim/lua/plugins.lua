@@ -1,13 +1,13 @@
 -- Bootstrapping pckr, plugin manager
 
 local function bootstrap_pckr()
-    local pckr_path = vim.fn.stdpath("data") .. "/pckr/pckr.nvim"
+    local pckr_path = vim.fn.stdpath('data') .. '/pckr/pckr.nvim'
 
     if not vim.uv.fs_stat(pckr_path) then
         vim.fn.system({
             'git',
             'clone',
-            "--filter=blob:none",
+            '--filter=blob:none',
             'https://github.com/lewis6991/pckr.nvim',
             pckr_path
         })
@@ -49,19 +49,19 @@ require('pckr').add{
     'hrsh7th/nvim-cmp',
 
     { -- powerful autopair plugin  that supports multiple characters
-    "windwp/nvim-autopairs",
-        event = "InsertEnter",
+    'windwp/nvim-autopairs',
+        event = 'InsertEnter',
         config = function()
-            require("nvim-autopairs").setup {}
+            require('nvim-autopairs').setup {}
         end
     },
 
     { -- git interface 
-    "NeogitOrg/neogit",
+    'NeogitOrg/neogit',
         dependencies = {
-            "nvim-lua/plenary.nvim",         -- required
-            "nvim-telescope/telescope.nvim", -- optional
-            "sindrets/diffview.nvim",        -- optional
+            'nvim-lua/plenary.nvim',         -- required
+            'nvim-telescope/telescope.nvim', -- optional
+            'sindrets/diffview.nvim',        -- optional
         }
     },
 
