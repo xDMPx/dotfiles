@@ -119,6 +119,22 @@ cmp.setup{
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
     },
+    --- icon based on the source name
+    formatting = {
+        fields = { 'menu', 'abbr', 'kind' },
+        format = function(entry, item)
+            local menu_icon = {
+                path = '🖫',
+                buffer = '',
+                nvim_lsp = '',
+                nvim_lsp_signature_help = '⋗',
+                nvim_lua = '',
+            }
+
+            item.menu = menu_icon[entry.source.name]
+            return item
+        end,
+    },
     mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
