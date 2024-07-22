@@ -99,6 +99,14 @@ require('mason-lspconfig').setup {
 
 -- CMP(completion engine) configuration 
 -- Mappings https://vonheikemen.github.io/devlog/tools/setup-nvim-lspconfig-plus-nvim-cmp/ 
+-- https://rsdlt.github.io/posts/rust-nvim-ide-guide-walkthrough-development-debug/
+
+-- Set completeopt to have a better completion experience
+-- menuone: popup even when there's only one match
+-- noinsert: Do not insert text until a selection is made
+-- noselect: Do not select, force to select one from the menu
+vim.opt.completeopt = {'menuone', 'noselect', 'noinsert'}
+
 local cmp = require('cmp')
 cmp.setup{
     snippet = {
@@ -143,6 +151,8 @@ cmp.setup{
         { name = 'path' },
         { name = 'buffer' },
         { name = 'nvim_lsp' },
+        { name = 'nvim_lsp_signature_help'},            -- display function signatures with current parameter emphasized
+        { name = 'nvim_lua', keyword_length = 2},       -- complete neovim's Lua runtime API such vim.lsp.*
     })
 }
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
