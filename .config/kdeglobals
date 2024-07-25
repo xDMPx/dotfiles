@@ -136,6 +136,9 @@ ForegroundVisited=68,71,90
 ColorScheme=DraculaPurple
 ColorSchemeHash=38f350e0530aaa58cc20a2cf2011a8a2d0c7a4fc
 
+[Icons]
+Theme=Tela-circle-dracula-dark
+
 [KDE]
 LookAndFeelPackage=org.kde.breezedark.desktop
 
