@@ -135,6 +135,13 @@ ForegroundVisited=68,71,90
 [General]
 ColorScheme=DraculaPurple
 ColorSchemeHash=38f350e0530aaa58cc20a2cf2011a8a2d0c7a4fc
+XftHintStyle=hintslight
+XftSubPixel=rgb
+fixed=FiraCode Nerd Font Mono,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+font=Fira Sans,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+menuFont=Fira Sans,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+smallestReadableFont=Fira Sans,8,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+toolBarFont=Fira Sans,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 
 [Icons]
 Theme=Tela-circle-dracula-dark
@@ -145,6 +152,7 @@ LookAndFeelPackage=org.kde.breezedark.desktop
 [WM]
 activeBackground=47,52,63
 activeBlend=47,52,63
+activeFont=Fira Sans,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 activeForeground=211,218,227
 inactiveBackground=47,52,63
 inactiveBlend=47,52,63
