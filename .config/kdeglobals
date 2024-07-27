@@ -148,6 +148,7 @@ Theme=Tela-circle-dracula-dark
 
 [KDE]
 LookAndFeelPackage=org.kde.breezedark.desktop
+widgetStyle=kvantum-dark
 
 [WM]
 activeBackground=47,52,63
