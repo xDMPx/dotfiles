@@ -133,8 +133,9 @@ ForegroundPositive=80,250,122
 ForegroundVisited=68,71,90
 
 [General]
-ColorScheme=DraculaPurple
-ColorSchemeHash=38f350e0530aaa58cc20a2cf2011a8a2d0c7a4fc
+ColorSchemeHash=e44c8d483c47a28c7d0e32e6b41dd227803affe5
+TerminalApplication=alacritty
+TerminalService=Alacritty.desktop
 XftHintStyle=hintslight
 XftSubPixel=rgb
 fixed=FiraCode Nerd Font Mono,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
@@ -147,6 +148,7 @@ toolBarFont=Fira Sans,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 Theme=Tela-circle-dracula-dark
 
 [KDE]
+AnimationDurationFactor=0
 LookAndFeelPackage=org.kde.breezedark.desktop
 widgetStyle=kvantum-dark
 
