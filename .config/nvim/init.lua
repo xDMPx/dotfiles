@@ -91,24 +91,24 @@ require('nvim-treesitter.configs').setup {
 }
 
 
--- package manager for LSP servers, DAP servers, linters, and formatters 
+-- package manager for LSP servers, DAP servers, linters, and formatters
 require('mason').setup {}
 require('mason-lspconfig').setup {
     ensure_installed = { 'rust_analyzer', 'pyright', 'lua_ls' }
 }
 
--- CMP(completion engine) configuration 
--- Mappings https://vonheikemen.github.io/devlog/tools/setup-nvim-lspconfig-plus-nvim-cmp/ 
+-- CMP(completion engine) configuration
+-- Mappings https://vonheikemen.github.io/devlog/tools/setup-nvim-lspconfig-plus-nvim-cmp/
 -- https://rsdlt.github.io/posts/rust-nvim-ide-guide-walkthrough-development-debug/
 
 -- Set completeopt to have a better completion experience
 -- menuone: popup even when there's only one match
 -- noinsert: Do not insert text until a selection is made
 -- noselect: Do not select, force to select one from the menu
-vim.opt.completeopt = {'menuone', 'noselect', 'noinsert'}
+vim.opt.completeopt = { 'menuone', 'noselect', 'noinsert' }
 
 local cmp = require('cmp')
-cmp.setup{
+cmp.setup {
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
@@ -154,21 +154,24 @@ cmp.setup{
             else
                 cmp.complete()
             end
-        end, {'i', 's'}),
+        end, { 'i', 's' }),
         ['<S-Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item(select_opts)
             else
                 fallback()
             end
-        end, {'i', 's'}),
+        end, { 'i', 's' }),
     }),
     sources = cmp.config.sources({
         { name = 'path' },
         { name = 'buffer' },
         { name = 'nvim_lsp' },
-        { name = 'nvim_lsp_signature_help'},            -- display function signatures with current parameter emphasized
-        { name = 'nvim_lua', keyword_length = 2},       -- complete neovim's Lua runtime API such vim.lsp.*
+        { name = 'nvim_lsp_signature_help' }, -- display function signatures with current parameter emphasized
+        {                                     -- complete neovim's Lua runtime API such vim.lsp.*
+            name = 'nvim_lua',
+            keyword_length = 2
+        },
     })
 }
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
@@ -190,8 +193,8 @@ cmp.setup.cmdline(':', {
     matching = { disallow_symbol_nonprefix_matching = false }
 })
 
--- autoparis for cmp 
-require('nvim-autopairs').setup {} 
+-- autoparis for cmp
+require('nvim-autopairs').setup {}
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 cmp.event:on(
     'confirm_done',
@@ -268,8 +271,8 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
 )
 
 vim.diagnostic.config {
-    float = { 
-        border = _border 
+    float = {
+        border = _border
     }
 }
 
@@ -299,7 +302,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 -- git decorations, integration for buffers
 require('gitsigns').setup {}
 
--- git interface 
+-- git interface
 require('neogit').setup {
     -- Hides the hints at the top of the status buffer
     disable_hint = true,

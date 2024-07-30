@@ -23,12 +23,12 @@ bootstrap_pckr()
 -- local cmd = require('pckr.loader.cmd')
 -- local keys = require('pckr.loader.keys')
 
-require('pckr').add{
+require('pckr').add {
     -- colorscheme
     'Mofiqul/dracula.nvim',
 
     -- fuzzy finder
-    {'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim'}},
+    { 'nvim-telescope/telescope.nvim',   requires = { 'nvim-lua/plenary.nvim' } },
 
     --  indentation guides
     'lukas-reineke/indent-blankline.nvim',
@@ -36,12 +36,12 @@ require('pckr').add{
     -- Treesitter - highlighting
     { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
 
-    -- package manager for LSP servers, DAP servers, linters, and formatters 
+    -- package manager for LSP servers, DAP servers, linters, and formatters
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
     'neovim/nvim-lspconfig',
 
-     -- completion engine
+    -- completion engine
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
@@ -49,15 +49,15 @@ require('pckr').add{
     'hrsh7th/nvim-cmp',
 
     { -- powerful autopair plugin  that supports multiple characters
-    'windwp/nvim-autopairs',
+        'windwp/nvim-autopairs',
         event = 'InsertEnter',
         config = function()
             require('nvim-autopairs').setup {}
         end
     },
 
-    { -- git interface 
-    'NeogitOrg/neogit',
+    { -- git interface
+        'NeogitOrg/neogit',
         dependencies = {
             'nvim-lua/plenary.nvim',         -- required
             'nvim-telescope/telescope.nvim', -- optional
