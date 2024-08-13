@@ -62,7 +62,7 @@ require('ibl').setup {}
 -- TreeSitter - highlighting
 require('nvim-treesitter.configs').setup {
     -- A list of parser names, or 'all'
-    ensure_installed = { 'rust', 'python', 'cpp', 'lua', 'vim', 'vimdoc' },
+    ensure_installed = { 'rust', 'python', 'cpp', 'lua', 'vim', 'vimdoc', 'c_sharp', 'hlsl' },
     -- List of parsers to ignore installing (or 'all')
     -- ignore_install = { 'javascript' },
     -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -89,12 +89,13 @@ require('nvim-treesitter.configs').setup {
         additional_vim_regex_highlighting = false,
     },
 }
+vim.filetype.add({ extension = { hlsl = 'hlsl' } })
 
 
 -- package manager for LSP servers, DAP servers, linters, and formatters
 require('mason').setup {}
 require('mason-lspconfig').setup {
-    ensure_installed = { 'rust_analyzer', 'pyright', 'lua_ls' }
+    ensure_installed = { 'rust_analyzer', 'pyright', 'lua_ls', 'omnisharp_mono' }
 }
 
 -- CMP(completion engine) configuration
@@ -206,13 +207,16 @@ local lspconfig = require('lspconfig')
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 lspconfig['rust_analyzer'].setup {
-    capabilities = capabilitie
+    capabilities = capabilities
 }
 lspconfig['pyright'].setup {
-    capabilities = capabilitie
+    capabilities = capabilities
 }
 lspconfig['lua_ls'].setup {
-    capabilities = capabilitie
+    capabilities = capabilities
+}
+lspconfig['omnisharp_mono'].setup {
+    capabilities = capabilities
 }
 
 -- Global mappings.
