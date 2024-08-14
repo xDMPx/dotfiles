@@ -43,10 +43,10 @@ min_time = 1
 ## SECOND LINE/ROW: Prompt
 # Somethere at the beginning
 [battery]
-charging_symbol = ""
+charging_symbol = "󰂄"
 disabled = true
-discharging_symbol = ""
-full_symbol = ""
+discharging_symbol = "󰂄"
+full_symbol = "󰂄"
 
 [[battery.display]] # "bold red" style when capacity is between 0% and 15%
 disabled = false
@@ -84,19 +84,19 @@ pipestatus = true
 symbol = "🔴"
 
 [aws]
-symbol = " "
+symbol = " "
 
 [conda]
-symbol = " "
+symbol = "󰜉"
 
 [dart]
-symbol = " "
+symbol = " "
 
 [docker_context]
-symbol = " "
+symbol = " "
 
 [elixir]
-symbol = " "
+symbol = ""
 
 [elm]
 symbol = " "
@@ -117,16 +117,16 @@ symbol = " "
 symbol = " "
 
 [nim]
-symbol = " "
+symbol = " "
 
 [nix_shell]
 symbol = " "
 
 [nodejs]
-symbol = " "
+symbol = " "
 
 [package]
-symbol = " "
+symbol = " "
 
 [perl]
 symbol = " "
@@ -144,4 +144,8 @@ symbol = " "
 symbol = " "
 
 [swift]
-symbol = "ﯣ "
+symbol = " "
+
+[dotnet]
+symbol = " "
+format = "via [$symbol($version )]($style)"
