@@ -62,7 +62,7 @@ require('ibl').setup {}
 -- TreeSitter - highlighting
 require('nvim-treesitter.configs').setup {
     -- A list of parser names, or 'all'
-    ensure_installed = { 'rust', 'python', 'cpp', 'lua', 'vim', 'vimdoc', 'c_sharp', 'hlsl' },
+    ensure_installed = { 'rust', 'python', 'cpp', 'lua', 'vim', 'vimdoc', 'c_sharp', 'hlsl', 'kotlin' },
     -- List of parsers to ignore installing (or 'all')
     -- ignore_install = { 'javascript' },
     -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -93,9 +93,10 @@ vim.filetype.add({ extension = { hlsl = 'hlsl' } })
 
 
 -- package manager for LSP servers, DAP servers, linters, and formatters
+-- jdk17-openjdk required for kotlin_language_server to work with Android
 require('mason').setup {}
 require('mason-lspconfig').setup {
-    ensure_installed = { 'rust_analyzer', 'pyright', 'lua_ls', 'omnisharp_mono' }
+    ensure_installed = { 'rust_analyzer', 'pyright', 'lua_ls', 'omnisharp_mono', 'kotlin_language_server' }
 }
 
 -- CMP(completion engine) configuration
@@ -204,18 +205,25 @@ cmp.event:on(
 
 -- LSP configuration
 local lspconfig = require('lspconfig')
-
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 lspconfig['rust_analyzer'].setup {
     capabilities = capabilities
 }
+
 lspconfig['pyright'].setup {
     capabilities = capabilities
 }
+
 lspconfig['lua_ls'].setup {
     capabilities = capabilities
 }
+
 lspconfig['omnisharp_mono'].setup {
+    capabilities = capabilities
+}
+
+lspconfig['kotlin_language_server'].setup {
     capabilities = capabilities
 }
 
