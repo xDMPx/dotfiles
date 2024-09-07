@@ -62,7 +62,7 @@ require('ibl').setup {}
 -- TreeSitter - highlighting
 require('nvim-treesitter.configs').setup {
     -- A list of parser names, or 'all'
-    ensure_installed = { 'lua', 'vim', 'vimdoc', 'javascript', ' typescript' },
+    ensure_installed = { 'lua', 'vim', 'vimdoc', 'javascript', 'typescript', 'html', 'css' },
     -- List of parsers to ignore installing (or 'all')
     -- ignore_install = { 'javascript' },
     -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -208,16 +208,16 @@ lspconfig['lua_ls'].setup {
     capabilities = capabilities
 }
 
-lspconfig['tsserver'].setup {
-    capabilities = capabilities
-}
-
 lspconfig['html'].setup {
     capabilities = capabilities
 }
 
 lspconfig['cssls'].setup {
     capabilities = capabilities
+}
+
+lspconfig['tsserver'].setup {
+    capabilities = capabilities,
 }
 
 -- Global mappings.
