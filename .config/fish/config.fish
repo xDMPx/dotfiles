@@ -31,3 +31,6 @@ alias ip="ip -color"
 
 # Replace cat with bat
 alias cat='bat --style header --style snip --style changes --style header'
+
+# Nvim configs
+alias wnvim='NVIM_APPNAME=nvim-web nvim'  # web
