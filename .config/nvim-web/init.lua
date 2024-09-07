@@ -62,7 +62,7 @@ require('ibl').setup {}
 -- TreeSitter - highlighting
 require('nvim-treesitter.configs').setup {
     -- A list of parser names, or 'all'
-    ensure_installed = { 'lua', 'vim', 'vimdoc', 'javascript', 'typescript', 'html', 'css' },
+    ensure_installed = { 'lua', 'vim', 'vimdoc', 'javascript', 'typescript', 'html', 'css', 'vue' },
     -- List of parsers to ignore installing (or 'all')
     -- ignore_install = { 'javascript' },
     -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -93,7 +93,7 @@ require('nvim-treesitter.configs').setup {
 -- package manager for LSP servers, DAP servers, linters, and formatters
 require('mason').setup {}
 require('mason-lspconfig').setup {
-    ensure_installed = { 'lua_ls', 'tsserver', 'html', 'cssls' }
+    ensure_installed = { 'lua_ls', 'tsserver', 'html', 'cssls', 'volar' }
 }
 
 -- CMP(completion engine) configuration
@@ -216,7 +216,22 @@ lspconfig['cssls'].setup {
     capabilities = capabilities
 }
 
+-- requires extra/vue-typescript-plugin
 lspconfig['tsserver'].setup {
+    capabilities = capabilities,
+    filetypes = { 'typescript', 'javascript', 'vue' },
+    init_options = {
+        plugins = {
+            {
+                name = '@vue/typescript-plugin',
+                location = '/usr/lib/node_modules/@vue/typescript-plugin',
+                languages = { 'javascript', 'typescript', 'vue' },
+            },
+        },
+    }
+}
+
+lspconfig['volar'].setup {
     capabilities = capabilities,
 }
 
