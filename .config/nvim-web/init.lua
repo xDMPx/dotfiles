@@ -93,7 +93,7 @@ require('nvim-treesitter.configs').setup {
 -- package manager for LSP servers, DAP servers, linters, and formatters
 require('mason').setup {}
 require('mason-lspconfig').setup {
-    ensure_installed = { 'lua_ls', 'tsserver', 'html', 'cssls', 'volar' }
+    ensure_installed = { 'lua_ls', 'ts_ls', 'html', 'cssls', 'volar' }
 }
 
 -- CMP(completion engine) configuration
@@ -217,7 +217,7 @@ lspconfig['cssls'].setup {
 }
 
 -- requires extra/vue-typescript-plugin
-lspconfig['tsserver'].setup {
+lspconfig['ts_ls'].setup {
     capabilities = capabilities,
     filetypes = { 'typescript', 'javascript', 'vue' },
     init_options = {
