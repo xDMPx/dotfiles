@@ -134,6 +134,7 @@ ForegroundVisited=68,71,90
 
 [General]
 ColorSchemeHash=e44c8d483c47a28c7d0e32e6b41dd227803affe5
+ColorScheme=DraculaPurple
 TerminalApplication=alacritty
 TerminalService=Alacritty.desktop
 XftHintStyle=hintslight
@@ -143,6 +144,7 @@ font=Fira Sans,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 menuFont=Fira Sans,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 smallestReadableFont=Fira Sans,8,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 toolBarFont=Fira Sans,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+widgetStyle=kvantum-dark
 
 [Icons]
 Theme=Tela-circle-dracula-dark
