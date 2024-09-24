@@ -1,0 +1,19 @@
+[package]
+name = "wallrustler"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rand = "0.8.5"
+rand_hc = "0.3.2"
+serde = { version = "1.0.210", features = ["derive"] }
+serde-binary = "0.5.0"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.59.0", features = ["Win32_Foundation", "Win32_UI", "Win32_UI_WindowsAndMessaging"] }
+
+[features]
+default = []
+hyprpaper = []
