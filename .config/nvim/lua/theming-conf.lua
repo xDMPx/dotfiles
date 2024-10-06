@@ -13,6 +13,9 @@ require('dracula').setup {
 
 vim.cmd [[colorscheme dracula]]
 
+-- indentation guides
+require('ibl').setup {}
+
 -- LSP floating windows round borders
 -- https://vi.stackexchange.com/questions/39074/user-borders-around-lsp-floating-windows
 local _border = 'rounded'
@@ -57,16 +60,3 @@ vim.api.nvim_create_autocmd('ColorScheme', {
     desc = 'Avoid overwritten by loading color schemes later',
     callback = set_hl_for_floating_window,
 })
-
--- transparent bg and dracula colors for Neogit
-vim.cmd [[hi NeogitDiffAdd guifg=#50FA7B guibg=#00000000]]
-vim.cmd [[hi NeogitDiffHeader cterm=bold gui=bold guifg=#8BE9FD guibg=#00000000]]
-vim.cmd [[hi NeogitDiffDelete guifg=#d15a5a guibg=#00000000]]
-vim.cmd [[hi NeogitHunkHeader cterm=bold gui=bold guifg=#8BE9FD guibg=#00000000]]
-vim.cmd [[hi NeogitDiffContextHighlight guibg=#00000000]]
-vim.cmd [[hi NeogitDiffContext guibg=#00000000]]
-vim.cmd [[hi NeogitCursorLine guibg=#00000000]]
-vim.cmd [[hi NeogitDiffAddHighlight guifg=#50FA7B guibg=#00000000]]
-vim.cmd [[hi NeogitDiffContextHighlight guibg=#00000000]]
-vim.cmd [[hi NeogitDiffDeleteHighlight guifg=#ff6e6e guibg=#00000000]]
-vim.cmd [[hi NeogitHunkHeaderHighlight gui=bold guifg=#8BE9FD guibg=#00000000]]

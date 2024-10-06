@@ -16,9 +16,6 @@ require('plugins')
 -- theming and styling
 require('theming-conf')
 
--- indentation guides
-require('ibl').setup {}
-
 -- fuzzy finder
 require('telescope-conf')
 
@@ -33,15 +30,4 @@ require('lsp-conf').setup {
 
 require('cmp-conf')
 
--- git decorations, integration for buffers
-require('gitsigns').setup {}
-
--- git interface
-require('neogit').setup {
-    -- Hides the hints at the top of the status buffer
-    disable_hint = true,
-    -- Disables changing the buffer highlights based on where the cursor is.
-    disable_context_highlighting = true,
-    -- Disables signs for sections/items/hunks
-    disable_signs = true,
-}
+require('git-conf')
