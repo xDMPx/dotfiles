@@ -1,0 +1,1 @@
+../../nvim/lua/cmp-conf.lua

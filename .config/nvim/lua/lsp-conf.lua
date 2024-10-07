@@ -18,9 +18,26 @@ lsp_conf.setup = function(config)
             local configs = require('lspconfig.configs')
             configs.omnisharp_mono = require('lspconfig.configs.omnisharp')
         end
-        lspconfig[lsp].setup {
-            capabilities = capabilities
-        }
+        if lsp == 'ts_ls' then
+            -- requires extra/vue-typescript-plugin
+            lspconfig[lsp].setup {
+                capabilities = capabilities,
+                filetypes = { 'typescript', 'javascript', 'vue' },
+                init_options = {
+                    plugins = {
+                        {
+                            name = '@vue/typescript-plugin',
+                            location = '/usr/lib/node_modules/@vue/typescript-plugin',
+                            languages = { 'javascript', 'typescript', 'vue' },
+                        },
+                    },
+                }
+            }
+        else
+            lspconfig[lsp].setup {
+                capabilities = capabilities
+            }
+        end
     end
 end
 
