@@ -20,7 +20,7 @@ require('theming-conf')
 require('telescope-conf')
 
 -- TreeSitter - highlighting
-require('treesitter').setup {
+require('treesitter-conf').setup {
     ensure_installed = { 'rust', 'python', 'cpp', 'lua', 'vim', 'vimdoc', 'c_sharp', 'hlsl', 'kotlin' },
 }
 
