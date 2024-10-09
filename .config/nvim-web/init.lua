@@ -11,7 +11,9 @@ vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 vim.cmd [[set clipboard+=unnamedplus]]
 
 -- plugin manager pckr
-require('plugins')
+require('plugins').setup {
+    ensure_installed = {}
+}
 
 -- theming and styling
 require('theming-conf')
