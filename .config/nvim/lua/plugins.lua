@@ -20,51 +20,63 @@ bootstrap_pckr()
 
 -- Plugins
 
+local plugins = {}
+
 -- local cmd = require('pckr.loader.cmd')
 -- local keys = require('pckr.loader.keys')
+local pckr = require('pckr')
+plugins.setup = function(config)
+    pckr.add {
+        -- colorscheme
+        'Mofiqul/dracula.nvim',
 
-require('pckr').add {
-    -- colorscheme
-    'Mofiqul/dracula.nvim',
+        -- fuzzy finder
+        { 'nvim-telescope/telescope.nvim',   requires = { 'nvim-lua/plenary.nvim' } },
 
-    -- fuzzy finder
-    { 'nvim-telescope/telescope.nvim',   requires = { 'nvim-lua/plenary.nvim' } },
+        --  indentation guides
+        'lukas-reineke/indent-blankline.nvim',
 
-    --  indentation guides
-    'lukas-reineke/indent-blankline.nvim',
+        -- Treesitter - highlighting
+        { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
 
-    -- Treesitter - highlighting
-    { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
+        -- package manager for LSP servers, DAP servers, linters, and formatters
+        'williamboman/mason.nvim',
+        'williamboman/mason-lspconfig.nvim',
+        'neovim/nvim-lspconfig',
 
-    -- package manager for LSP servers, DAP servers, linters, and formatters
-    'williamboman/mason.nvim',
-    'williamboman/mason-lspconfig.nvim',
-    'neovim/nvim-lspconfig',
+        -- completion engine
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-path',
+        'hrsh7th/cmp-cmdline',
+        'hrsh7th/nvim-cmp',
 
-    -- completion engine
-    'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-path',
-    'hrsh7th/cmp-cmdline',
-    'hrsh7th/nvim-cmp',
+        { -- powerful autopair plugin  that supports multiple characters
+            'windwp/nvim-autopairs',
+            event = 'InsertEnter',
+            config = function()
+                require('nvim-autopairs').setup {}
+            end
+        },
 
-    { -- powerful autopair plugin  that supports multiple characters
-        'windwp/nvim-autopairs',
-        event = 'InsertEnter',
-        config = function()
-            require('nvim-autopairs').setup {}
-        end
-    },
+        { -- git interface
+            'NeogitOrg/neogit',
+            dependencies = {
+                'nvim-lua/plenary.nvim',         -- required
+                'nvim-telescope/telescope.nvim', -- optional
+                'sindrets/diffview.nvim',        -- optional
+            }
+        },
 
-    { -- git interface
-        'NeogitOrg/neogit',
-        dependencies = {
-            'nvim-lua/plenary.nvim',         -- required
-            'nvim-telescope/telescope.nvim', -- optional
-            'sindrets/diffview.nvim',        -- optional
+        -- git decorations, integration for buffers
+        'lewis6991/gitsigns.nvim',
+    }
+
+    for _, pkg in ipairs(config.ensure_installed) do
+        pckr.add {
+            pkg
         }
-    },
+    end
+end
 
-    -- git decorations, integration for buffers
-    'lewis6991/gitsigns.nvim',
-}
+return plugins

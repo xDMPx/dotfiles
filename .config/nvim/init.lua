@@ -11,7 +11,9 @@ vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 vim.cmd [[set clipboard+=unnamedplus]]
 
 -- plugin manager pckr
-require('plugins')
+require('plugins').setup {
+    ensure_installed = {}
+}
 
 -- theming and styling
 require('theming-conf')
@@ -24,10 +26,12 @@ require('treesitter-conf').setup {
     ensure_installed = { 'rust', 'python', 'cpp', 'lua', 'vim', 'vimdoc', 'c_sharp', 'hlsl', 'kotlin' },
 }
 
+--- Language servers
 require('lsp-conf').setup {
     ensure_installed = { 'rust_analyzer', 'pyright', 'lua_ls', 'omnisharp_mono', 'kotlin_language_server' }
 }
 
+--- Completion engine
 require('cmp-conf')
 
 require('git-conf')
