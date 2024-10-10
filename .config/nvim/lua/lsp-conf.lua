@@ -33,6 +33,15 @@ lsp_conf.setup = function(config)
                     },
                 }
             }
+        elseif lsp == 'ltex' then
+            lspconfig[lsp].setup {
+                settings = {
+                    ltex = {
+                        language = "pl-PL",
+                    }
+                },
+                capabilities = capabilities
+            }
         else
             lspconfig[lsp].setup {
                 capabilities = capabilities

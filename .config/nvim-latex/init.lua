@@ -14,8 +14,18 @@ vim.cmd [[set clipboard+=unnamedplus]]
 
 -- plugin manager pckr
 require('plugins').setup {
-    ensure_installed = {}
+    ensure_installed = {
+        { 'lervag/vimtex',
+            -- https://github.com/lewis6991/pckr.nvim/issues/37
+            config_pre = function()
+                vim.opt.rtp:prepend(vim.fn.stdpath('data') .. '/site/pack/pckr/opt/vimtex')
+            end
+        }
+    }
 }
+
+-- VimTeX
+vim.g.vimtex_view_method = 'sioyek'
 
 -- theming and styling
 require('theming-conf')
@@ -25,7 +35,9 @@ require('telescope-conf')
 
 --- Language servers
 require('lsp-conf').setup {
-    ensure_installed = {}
+    ensure_installed = {
+        'ltex'
+    }
 }
 
 --- Completion engine
