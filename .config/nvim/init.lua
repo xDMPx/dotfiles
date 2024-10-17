@@ -35,3 +35,18 @@ require('lsp-conf').setup {
 require('cmp-conf')
 
 require('git-conf')
+
+vim.api.nvim_create_user_command('AndroidBuildDebug', function()
+    local output = vim.fn.system { './gradlew', 'assembleDebug', '--parallel' }
+    print(output)
+end, {})
+
+vim.api.nvim_create_user_command('AndroidBuildRelease', function()
+    local output = vim.fn.system { './gradlew', 'build', '--parallel' }
+    print(output)
+end, {})
+
+vim.api.nvim_create_user_command('AndroidInstallDebug', function()
+    local output = vim.fn.system { './gradlew', 'installDebug', '--parallel' }
+    print(output)
+end, {})
