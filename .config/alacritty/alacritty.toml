@@ -1,4 +1,3 @@
-import = ["/home/dmp/.config/alacritty/dracula.toml"]
 
 [colors.normal]
 red = "#ed254e"
@@ -26,8 +25,13 @@ family = "CaskaydiaCove Nerd Font"
 [font.normal]
 family = "CaskaydiaCove Nerd Font"
 
-[shell]
+[terminal.shell]
 program = "fish"
 
 [window]
 opacity = 0.75
+
+[general]
+import = ["/home/dmp/.config/alacritty/dracula.toml"]
+
+[terminal]
