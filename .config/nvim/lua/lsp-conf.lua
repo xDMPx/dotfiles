@@ -13,11 +13,6 @@ lsp_conf.setup = function(config)
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
     for _, lsp in ipairs(config.ensure_installed) do
-        -- Temporary fix until #468 gets merged
-        if lsp == 'omnisharp_mono' then
-            local configs = require('lspconfig.configs')
-            configs.omnisharp_mono = require('lspconfig.configs.omnisharp')
-        end
         if lsp == 'ts_ls' then
             -- requires extra/vue-typescript-plugin
             lspconfig[lsp].setup {
