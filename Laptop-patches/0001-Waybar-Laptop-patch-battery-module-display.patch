@@ -1,0 +1,44 @@
+From 603a5509a7aadb1e0f8f5c6936d0b2710ef237fb Mon Sep 17 00:00:00 2001
+From: xDMPx <57721731+xDMPx@users.noreply.github.com>
+Date: Fri, 25 Oct 2024 20:16:07 +0200
+Subject: [PATCH] Waybar: Laptop patch (battery module, display)
+
+---
+ .config/waybar/config    | 4 ++--
+ .config/waybar/style.css | 3 ---
+ 2 files changed, 2 insertions(+), 5 deletions(-)
+
+diff --git a/.config/waybar/config b/.config/waybar/config
+index 4cb933ba..3133a5c4 100644
+--- a/.config/waybar/config
++++ b/.config/waybar/config
+@@ -6,10 +6,10 @@
+     "exclusive": true,
+     "passthrough": false,
+     "gtk-layer-shell": true,
+-    "output": ["DP-3"],
++    "output": ["eDP-1"],
+     "modules-left": ["hyprland/workspaces"],
+     "modules-center": ["hyprland/window"],
+-    "modules-right": ["tray","network","pulseaudio","pulseaudio#microphone","clock"],
++    "modules-right": ["tray","network","pulseaudio","pulseaudio#microphone","battery","clock"],
+ 
+     "hyprland/window": {
+         "format": "{}"
+diff --git a/.config/waybar/style.css b/.config/waybar/style.css
+index a0f28bdb..6e64faf6 100644
+--- a/.config/waybar/style.css
++++ b/.config/waybar/style.css
+@@ -125,9 +125,6 @@ tooltip {
+     color: #cba6f7;
+     border-left: 0px;
+     border-right: 0px;
+-    border-radius: 0px 20px 20px 0px;
+-    margin-right: 5px;
+-    padding-right: 8px;
+ }
+ 
+ #upower,
+-- 
+2.47.0
+
