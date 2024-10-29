@@ -4,7 +4,9 @@ INSTALL_SCRIPT_PATH="$(readlink -f "${BASH_SOURCE}")"
 INSTALL_SCRIPT_DIR_PATH="$(dirname "$INSTALL_SCRIPT_PATH")"
 
 mkdir -v ~/dotfiles_backup || exit -1
-
+mkdir -v ~/dotfiles_backup/.config
+mkdir -v ~/dotfiles_backup/.local
+mkdir -v ~/dotfiles_backup/.local/share
 
 echo "Backing up the current dot files"
 mv -v ~/.icons ~/dotfiles_backup
@@ -12,43 +14,43 @@ mv -v ~/.themes/ ~/dotfiles_backup
 mv -v ~/.Xresources ~/dotfiles_backup
 mv -v ~/.gtkrc-2.0 ~/dotfiles_backup
 
-mv -v ~/.local/share/aurorae ~/dotfiles_backup
-mv -v ~/.local/share/color-schemes ~/dotfiles_backup
-mv -v ~/.local/share/icons ~/dotfiles_backup
-mv -v ~/.local/share/plasma ~/dotfiles_backup
+mv -v ~/.local/share/aurorae ~/dotfiles_backup/.local/share/
+mv -v ~/.local/share/color-schemes ~/dotfiles_backup/.local/share/
+mv -v ~/.local/share/icons ~/dotfiles_backup/.local/share/
+mv -v ~/.local/share/plasma ~/dotfiles_backup/.local/share/
 
-mv -v ~/.config/alacritty ~/dotfiles_backup
-mv -v ~/.config/dconf ~/dotfiles_backup
-mv -v ~/.config/dolphinrc ~/dotfiles_backup
-mv -v ~/.config/dunst ~/dotfiles_backup
-mv -v ~/.config/fish ~/dotfiles_backup
-mv -v ~/.config/garuda-pkgbuilds ~/dotfiles_backup
-mv -v ~/.config/gtkrc ~/dotfiles_backup
-mv -v ~/.config/gtkrc-2.0 ~/dotfiles_backup
-mv -v ~/.config/gtk-3.0 ~/dotfiles_backup
-mv -v ~/.config/gtk-4.0 ~/dotfiles_backup
-mv -v ~/.config/hypr ~/dotfiles_backup
-mv -v ~/.config/katerc ~/dotfiles_backup
-mv -v ~/.config/kcminputrc ~/dotfiles_backup
-mv -v ~/.config/kdedefaults ~/dotfiles_backup
-mv -v ~/.config/kdeglobals ~/dotfiles_backup
-mv -v ~/.config/kscreenlockerrc ~/dotfiles_backup
-mv -v ~/.config/ksplashrc ~/dotfiles_backup
-mv -v ~/.config/Kvantum ~/dotfiles_backup
-mv -v ~/.config/kwalletrc ~/dotfiles_backup
-mv -v ~/.config/kwinrc ~/dotfiles_backup
-mv -v ~/.config/nvim/ ~/dotfiles_backup
-mv -v ~/.config/nvim-web ~/dotfiles_backup
-mv -v ~/.config/nvim-latex ~/dotfiles_backup
-mv -v ~/.config/plasmarc ~/dotfiles_backup
-mv -v ~/.config/plasma-localerc ~/dotfiles_backup
-mv -v ~/.config/qt5ct ~/dotfiles_backup
-mv -v ~/.config/qt6ct ~/dotfiles_backup
-mv -v ~/.config/rofi ~/dotfiles_backup
-mv -v ~/.config/starship.toml ~/dotfiles_backup
-mv -v ~/.config/Trolltech.conf ~/dotfiles_backup
-mv -v ~/.config/waybar ~/dotfiles_backup
-mv -v ~/.config/xsettingsd ~/dotfiles_backup
+mv -v ~/.config/alacritty ~/dotfiles_backup/.config/
+mv -v ~/.config/dconf ~/dotfiles_backup/.config/
+mv -v ~/.config/dolphinrc ~/dotfiles_backup/.config/
+mv -v ~/.config/dunst ~/dotfiles_backup/.config/
+mv -v ~/.config/fish ~/dotfiles_backup/.config/
+mv -v ~/.config/garuda-pkgbuilds ~/dotfiles_backup/.config/
+mv -v ~/.config/gtkrc ~/dotfiles_backup/.config/
+mv -v ~/.config/gtkrc-2.0 ~/dotfiles_backup/.config/
+mv -v ~/.config/gtk-3.0 ~/dotfiles_backup/.config/
+mv -v ~/.config/gtk-4.0 ~/dotfiles_backup/.config/
+mv -v ~/.config/hypr ~/dotfiles_backup/.config/
+mv -v ~/.config/katerc ~/dotfiles_backup/.config/
+mv -v ~/.config/kcminputrc ~/dotfiles_backup/.config/
+mv -v ~/.config/kdedefaults ~/dotfiles_backup/.config/
+mv -v ~/.config/kdeglobals ~/dotfiles_backup/.config/
+mv -v ~/.config/kscreenlockerrc ~/dotfiles_backup/.config/
+mv -v ~/.config/ksplashrc ~/dotfiles_backup/.config/
+mv -v ~/.config/Kvantum ~/dotfiles_backup/.config/
+mv -v ~/.config/kwalletrc ~/dotfiles_backup/.config/
+mv -v ~/.config/kwinrc ~/dotfiles_backup/.config/
+mv -v ~/.config/nvim/ ~/dotfiles_backup/.config/
+mv -v ~/.config/nvim-web ~/dotfiles_backup/.config/
+mv -v ~/.config/nvim-latex ~/dotfiles_backup/.config/
+mv -v ~/.config/plasmarc ~/dotfiles_backup/.config/
+mv -v ~/.config/plasma-localerc ~/dotfiles_backup/.config/
+mv -v ~/.config/qt5ct ~/dotfiles_backup/.config/
+mv -v ~/.config/qt6ct ~/dotfiles_backup/.config/
+mv -v ~/.config/rofi ~/dotfiles_backup/.config/
+mv -v ~/.config/starship.toml ~/dotfiles_backup/.config/
+mv -v ~/.config/Trolltech.conf ~/dotfiles_backup/.config/
+mv -v ~/.config/waybar ~/dotfiles_backup/.config/
+mv -v ~/.config/xsettingsd ~/dotfiles_backup/.config/
 
 
 echo "Installing/Symlinking"
