@@ -3,12 +3,23 @@
 INSTALL_SCRIPT_PATH="$(readlink -f "${BASH_SOURCE}")"
 INSTALL_SCRIPT_DIR_PATH="$(dirname "$INSTALL_SCRIPT_PATH")"
 
+
+echo "Install dependencies"
+echo ""
+
+$INSTALL_SCRIPT_DIR_PATH/install_dependencies.sh
+
+echo ""
+echo "---------------"
+
+echo "Backing up the current dot files"
+echo ""
+
 mkdir -v ~/dotfiles_backup || exit -1
 mkdir -v ~/dotfiles_backup/.config
 mkdir -v ~/dotfiles_backup/.local
 mkdir -v ~/dotfiles_backup/.local/share
 
-echo "Backing up the current dot files"
 mv -v ~/.icons ~/dotfiles_backup
 mv -v ~/.themes/ ~/dotfiles_backup
 mv -v ~/.Xresources ~/dotfiles_backup
@@ -52,8 +63,12 @@ mv -v ~/.config/Trolltech.conf ~/dotfiles_backup/.config/
 mv -v ~/.config/waybar ~/dotfiles_backup/.config/
 mv -v ~/.config/xsettingsd ~/dotfiles_backup/.config/
 
+echo ""
+echo "---------------"
 
-echo "Installing/Symlinking"
+echo "Installing/Symlinking dot files"
+echo ""
+
 ln -sv "${INSTALL_SCRIPT_DIR_PATH}/.icons" ~/ 
 ln -sv "${INSTALL_SCRIPT_DIR_PATH}/.themes/" ~/
 ln -sv "${INSTALL_SCRIPT_DIR_PATH}/.Xresources" ~/
@@ -97,3 +112,5 @@ ln -sv "${INSTALL_SCRIPT_DIR_PATH}/.config/Trolltech.conf" ~/.config
 ln -sv "${INSTALL_SCRIPT_DIR_PATH}/.config/waybar" ~/.config
 ln -sv "${INSTALL_SCRIPT_DIR_PATH}/.config/xsettingsd" ~/.config
 
+echo ""
+echo "---------------"
