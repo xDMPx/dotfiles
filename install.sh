@@ -3,14 +3,15 @@
 INSTALL_SCRIPT_PATH="$(readlink -f "${BASH_SOURCE}")"
 INSTALL_SCRIPT_DIR_PATH="$(dirname "$INSTALL_SCRIPT_PATH")"
 
+if [[ "$1" != "--no-deps" ]]; then
+    echo "Install dependencies"
+    echo ""
 
-echo "Install dependencies"
-echo ""
+    $INSTALL_SCRIPT_DIR_PATH/install_dependencies.sh
 
-$INSTALL_SCRIPT_DIR_PATH/install_dependencies.sh
-
-echo ""
-echo "---------------"
+    echo ""
+    echo "---------------"
+fi
 
 echo "Backing up the current dot files"
 echo ""
