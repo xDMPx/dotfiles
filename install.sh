@@ -61,6 +61,7 @@ mv -v ~/.config/qt6ct ~/dotfiles_backup/.config/
 mv -v ~/.config/rofi ~/dotfiles_backup/.config/
 mv -v ~/.config/starship.toml ~/dotfiles_backup/.config/
 mv -v ~/.config/Trolltech.conf ~/dotfiles_backup/.config/
+mv -v ~/.config/tmux ~/dotfiles_backup/.config/
 mv -v ~/.config/waybar ~/dotfiles_backup/.config/
 mv -v ~/.config/xsettingsd ~/dotfiles_backup/.config/
 
@@ -110,6 +111,7 @@ ln -sv "${INSTALL_SCRIPT_DIR_PATH}/.config/qt6ct" ~/.config
 ln -sv "${INSTALL_SCRIPT_DIR_PATH}/.config/rofi" ~/.config
 ln -sv "${INSTALL_SCRIPT_DIR_PATH}/.config/starship.toml" ~/.config
 ln -sv "${INSTALL_SCRIPT_DIR_PATH}/.config/Trolltech.conf" ~/.config
+ln -sv "${INSTALL_SCRIPT_DIR_PATH}/.config/tmux" ~/.config
 ln -sv "${INSTALL_SCRIPT_DIR_PATH}/.config/waybar" ~/.config
 ln -sv "${INSTALL_SCRIPT_DIR_PATH}/.config/xsettingsd" ~/.config
 
