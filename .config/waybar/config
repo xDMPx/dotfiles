@@ -74,7 +74,7 @@
         "format-source": " {volume}%",
         "format-source-muted": " Muted",
         "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-        "on-click-right": "pavucontrol",
+        "on-click-right": "pavucontrol -t 4",
         "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
         "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
         "scroll-step": 5
