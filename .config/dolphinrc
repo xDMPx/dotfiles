@@ -1,3 +1,5 @@
+MenuBar=Disabled
+
 [General]
 Version=202
 ViewPropsTimestamp=2024,7,24,16,21,43.184
@@ -8,4 +10,3 @@ Places Icons Static Size=22
 
 [MainWindow]
 MenuBar=Disabled
-ToolBarsMovable=Disabled

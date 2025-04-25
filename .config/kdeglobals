@@ -133,8 +133,8 @@ ForegroundPositive=80,250,122
 ForegroundVisited=68,71,90
 
 [General]
-ColorSchemeHash=e44c8d483c47a28c7d0e32e6b41dd227803affe5
 ColorScheme=DraculaPurple
+ColorSchemeHash=e44c8d483c47a28c7d0e32e6b41dd227803affe5
 TerminalApplication=alacritty
 TerminalService=Alacritty.desktop
 XftHintStyle=hintslight
