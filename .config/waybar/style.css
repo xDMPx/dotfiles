@@ -58,6 +58,7 @@ tooltip {
 #bluetooth,
 #workspaces,
 #tray,
+#mpris,
 #backlight {
     background: #1e1e2e;
     opacity: 0.8;
@@ -78,6 +79,7 @@ tooltip {
     padding: 0px 4px;
 }
 
+#mpris,
 #workspaces {
     background: #1e1e2e;
     border-radius: 20px;

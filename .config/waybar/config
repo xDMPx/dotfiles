@@ -122,8 +122,8 @@
     },
 
     "mpris": {
-        "format": "DEFAULT: {player_icon} {dynamic}",
-        "format-paused": "DEFAULT: {status_icon} <i>{dynamic}</i>",
+        "format": "{player_icon} {title} {position}",
+        "format-paused": "{status_icon} <i>{title}</i> {position}",
         "player-icons": {
             "default": "▶",
             "mpv": "🎵"
