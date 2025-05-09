@@ -30,9 +30,9 @@ sudo pacman -S starship
 sudo pacman -S bat
 sudo pacman -S exa
 sudo pacman -S fastfetch
+sudo pacman -S yazi
 
 # Development Tools
 sudo pacman -S neovim
 sudo pacman -S ripgrep
 sudo pacman -S npm
-

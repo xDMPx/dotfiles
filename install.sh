@@ -64,6 +64,7 @@ mv -v ~/.config/Trolltech.conf ~/dotfiles_backup/.config/
 mv -v ~/.config/tmux ~/dotfiles_backup/.config/
 mv -v ~/.config/waybar ~/dotfiles_backup/.config/
 mv -v ~/.config/xsettingsd ~/dotfiles_backup/.config/
+mv -v ~/.config/yazi ~/dotfiles_backup/.config/
 
 echo ""
 echo "---------------"
@@ -114,6 +115,7 @@ ln -sv "${INSTALL_SCRIPT_DIR_PATH}/.config/Trolltech.conf" ~/.config
 ln -sv "${INSTALL_SCRIPT_DIR_PATH}/.config/tmux" ~/.config
 ln -sv "${INSTALL_SCRIPT_DIR_PATH}/.config/waybar" ~/.config
 ln -sv "${INSTALL_SCRIPT_DIR_PATH}/.config/xsettingsd" ~/.config
+ln -sv "${INSTALL_SCRIPT_DIR_PATH}/.config/yazi" ~/.config
 
 echo ""
 echo "---------------"
