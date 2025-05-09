@@ -9,13 +9,13 @@ lsp_conf.setup = function(config)
     }
 
     -- LSP configuration
-    local lspconfig = require('lspconfig')
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
     for _, lsp in ipairs(config.ensure_installed) do
+        vim.lsp.enable(lsp)
         if lsp == 'ts_ls' then
             -- requires extra/vue-typescript-plugin
-            lspconfig[lsp].setup {
+            vim.lsp.config(lsp, {
                 capabilities = capabilities,
                 filetypes = { 'typescript', 'javascript', 'vue' },
                 init_options = {
@@ -27,20 +27,20 @@ lsp_conf.setup = function(config)
                         },
                     },
                 }
-            }
+            })
         elseif lsp == 'ltex' then
-            lspconfig[lsp].setup {
+            vim.lsp.config(lsp, {
                 settings = {
                     ltex = {
                         language = "pl-PL",
                     }
                 },
                 capabilities = capabilities
-            }
+            })
         else
-            lspconfig[lsp].setup {
+            vim.lsp.config(lsp, {
                 capabilities = capabilities
-            }
+            })
         end
     end
 end
