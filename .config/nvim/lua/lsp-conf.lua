@@ -37,6 +37,11 @@ lsp_conf.setup = function(config)
                 },
                 capabilities = capabilities
             })
+        elseif lsp == 'omnisharp_mono' then
+            local pid = vim.fn.getpid()
+            vim.lsp.config(lsp, {
+                cmd = { 'omnisharp-mono', '-z', '--hostPID', pid, 'DotNet:enablePackageRestore=false', '--encoding', 'utf-8', '--languageserver' }
+            })
         else
             vim.lsp.config(lsp, {
                 capabilities = capabilities
