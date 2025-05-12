@@ -36,7 +36,7 @@ require('telescope-conf')
 --- Language servers
 require('lsp-conf').setup {
     ensure_installed = {
-        'ltex',
+        'ltex_plus',
         'texlab'
     }
 }

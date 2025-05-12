@@ -28,7 +28,7 @@ lsp_conf.setup = function(config)
                     },
                 }
             })
-        elseif lsp == 'ltex' then
+        elseif lsp == 'ltex' or lsp == 'ltex_plus' then
             vim.lsp.config(lsp, {
                 settings = {
                     ltex = {
