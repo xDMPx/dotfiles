@@ -18,7 +18,7 @@ sudo pacman -S xdg-desktop-portal-gtk
 sudo pacman -S xdg-desktop-portal-hyprland
 sudo pacman -S xdg-desktop-portal
 sudo pacman -S waybar
-sudo pacman -S rofi-wayland
+sudo pacman -S rofi
 sudo pacman -S swww
 sudo pacman -S dunst
 sudo pacman -S grim
